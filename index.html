@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Klang - Soluções Digitais</title>		
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="fonts-icones.css">
+		<link rel="icon" type="image/x-icon" href="images/favicon.png">
+		
+		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'></script>
+		<script type='text/javascript' src='javascripts/jquery.tipsy.js'></script>
+		<script type='text/javascript'>
+		
+		
+		$(function() {
+			$('#tipsy').tipsy({fade: true, gravity: 's'});
+		});
+		</script>
+
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+	</head>
+	<body>
+		<div class="wrapper">
+			<img class="logo" src="images/logo.png" alt="LG" title="LG"/>
+			<div class="hr"></div>
+			<h1>EM BREVE</h1>
+			<p>O site está em construção, porém logo a transformação digital estará a seu alcance!</p>
+			
+			<script>
+				start_date = new Date("October 01, 2022 11:50:00");
+				end_date = new Date("October 20, 2022 14:00:00");
+				var start = start_date.getTime();
+				var end = end_date.getTime();
+				
+				
+				
+				window.setInterval(function(){
+						var now = +new Date;
+						restante= end - start;
+						porcentagem =  ( now - start ) / ( end - start ) * 100; //73%
+						if (porcentagem > 100) {
+							porcentagem = "100";
+						}
+						
+						if (porcentagem == 100 ) {
+							location.reload(); 
+						}
+						
+						
+						document.getElementById('tipsy').setAttribute('title',Math.round(porcentagem) + "% Completo.");
+						porcentagem = porcentagem + "%";
+						
+						document.getElementById("progress-bar").style.width=porcentagem;
+						
+
+						
+						}, 100);
+					</script>
+			
+			<section class="progress">
+				<div class="progress-bar-container" id="tipsy" title="99% Completo"> <!-- Edit this title for the tooltip pop up -->
+					<article id="progress-bar" class="progress-bar"   ></article> <!-- Edit the width percentage value to indicate progress -->
+				</div>
+				<article class="txt-launch-day-hat"></article>
+			</section>
+			<br>
+			<footer>
+			<div class="hr"></div>
+			<nav class="btn_social">
+                    
+				<ul>
+					<li><a href="https://www.facebook.com/klangsolucoes" target="_blank" title="facebook"><i class="icon icon-facebook"></i></a></li>
+					<li><a href="https://www.instagram.com/klangsolucoes/" target="_blank" title="instagram"><i class="icon icon-instagram"></i></a></li>
+					<li><a href="https://wa.me/5562991751394?text=Ol%C3%A1!%20Gostaria%20de%20uma%20transforma%C3%A7%C3%A3o%20digital!" target="_blank" title="youtube"><i class="icon icon-whatsapp"></i></a></li>
+								 
+				</ul>
+			 </nav>
+			</footer>
+		</div>
+	</body>
+</html>
